@@ -7,7 +7,7 @@ class PublicController < ApplicationController
 
   def graph1
     @sprint = Sprints.dev
-    @sprint_count = @sprint.size
+    @sprint_count = @sprint.average(:completed_pts)
   end
   
   def graph2
@@ -17,7 +17,7 @@ class PublicController < ApplicationController
   
   def graph3
     @sprint = Sprints.ui
-    @sprint_count = @sprint.size
+    @sprint_count = @sprint.average(:completed_pts)
   end
   
   def graph4
