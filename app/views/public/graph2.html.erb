@@ -1,24 +1,58 @@
-<html>
-  <head>
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-	          ['Sprint', 'Completed Points', 'Hours'],
+   <html>
+	  <head>
+	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	    <script type="text/javascript">	
+		
+	google.load('visualization', '1', {'packages': ['corechart']});
+	google.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+	    var data = new google.visualization.DataTable();
+	    data.addColumn('string', 'Sprint');
+	    data.addColumn('number', 'Completed Points');
+	    data.addColumn('number', 'Hours');
+	    data.addRows([
+		
 			<% @sprint.each do |sprint| %>
-	          ["<%= sprint.sprint %>",  <%= sprint.completed_pts %>, <%= sprint.hours %>],
+	          ["<%= sprint.sprint %>", <%= sprint.completed_pts %>,<%= sprint.hours %>],
 			<% end %>
-        ]);
+	    ]);
+		
+	    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+	    chart.draw(data, {
+	        width: 1200,
+	        height: 600,
+			legendTextStyle: {color:'#666666'},
+			hAxis: {title: 'Sprints',
+			        titleTextStyle: {color: '#5c5c5c'},
+			        titlePosition: 'in'},
+	        colors: ['#552988', '#e69500'],
+			title: 'Developer Sprint Velocity -- Average Completed Pts: <%= @sprint_count %> / Hours: <%= @sprint_hours %> / Bugs: <%= @sprint_bugs %>' ,
+	        series: {
+	            0: {targetAxisIndex: 0},
+	            1: {targetAxisIndex: 1}
+	        },
+	        vAxes: {
+	            0: {
+	                minValue: 0,
+	                maxValue: 50,
+	                title: 'Completed Points',
+					titleTextStyle: {color: '#5c5c5c'},
+		            titlePosition: 'out'
+	            },
+	            1: {
+	                minValue: 0,
+	                maxValue: 300,
+	                title: 'Hours',
+					titleTextStyle: {color: '#5c5c5c'},
+		            titlePosition: 'out'
+	            }
+	        }
+	    });
+	}
+</script>	
 
-        var options = {
-          title: 'Developer Velocity / Hours',
-        };
 
-        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
     </script>
   </head>
   <body>
