@@ -47,9 +47,9 @@ ul{list-style-type:none;}
 
 .menu{margin:0 auto; padding:10px;}
 .menu .identity { text-align: center; }
-.menu h3 {margin:0 0 0px 0;}
+.menu h1 {margin:0 0 0px 0; font-size: 40px;}
 .menu ul { position:relative; }
-.menu ul li { margin-top: 0em; margin-bottom: 0.3em; text-decoration:none; }
+.menu ul li { font-size: 32px; margin-top: 0em; margin-bottom: 0.5em; text-decoration:none; }
 
 .index table {width: 762px; position:relative;}
 .index table tr td { border: 1px solid #666666; text-align: center; }

@@ -1,6 +1,45 @@
 class PublicController < ApplicationController
   require "ruby-standard-deviation"
   
+  #!/usr/bin/env ruby
+
+  #require "rubygems"
+  #require "JSON"
+  #require "net/https"
+  #require "uri"
+  #api_key = "jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN"
+  #workspace_id = "7289715607517"
+
+  # set up HTTPS connection
+  #uri = URI.parse("https://app.asana.com/api/1.0/projects/7289715607517/tasks?opt_fields=name")
+  #http = Net::HTTP.new(uri.host, uri.port)
+  #http.use_ssl = true
+  #http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+  # set up the request
+  #header = {
+  #  "Content-Type" => "application/json"
+  #}
+
+  #request = Net::HTTP::Get.new(uri.request_uri)
+  #response = http.request(request)
+  #response.body = {
+  #  "data" => {
+  #    "workspace" => workspace_id,
+  #    "name" => "Hello World!",
+  #    "assignee" => assignee
+  #  }
+  #}.to_json()
+  
+  #response.status
+  
+  #body = JSON.parse(res.body)
+  #if body['errors'] then
+  #  puts "Server returned an error: #{body['errors'][0]['message']}"
+  #else
+  #  puts "Created task with id: #{body['data']['id']}"
+  #end
+  
   def index
     @sprint = Sprints.dev
     @sprint_count = @sprint.size
