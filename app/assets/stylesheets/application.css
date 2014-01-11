@@ -1459,7 +1459,7 @@ COLORS:
 }
 
 .m-lgo li a {
-  background: url(https://qa.ncsasports.org/recruit/assets/dash/ncsa-logo.png) no-repeat left center;
+  background: url(/assets/ncsa-logo.png) no-repeat left center;
   display: inline-block;
   text-indent: -9999px;
   width: 105px;
