@@ -446,7 +446,7 @@ table {
 
 
 html {
-  font-size: 14px; /* base figure for REMs */
+  font-size: 13px; /* base figure for REMs */
   color: #333;
 }
 
@@ -663,7 +663,7 @@ COLORS:
 
 .f-pictos {
   font-family: "Pictos";
-  font-size: 14px;
+  font-size: 13px;
   font-size: 1.0769230769rem;
   font-weight: normal;
 }
@@ -1326,8 +1326,8 @@ COLORS:
 /* ---- Statistics ---- */
 
 .m-sts {
-  margin: 18px 0 0 0;
-  margin: 1.3846153846rem 0 0 0;
+  margin: 2px 0 0 0;
+  margin: 0.7rem 0 0 0;
   /*line-height: 1.2307692308;*/
 }
 
@@ -1337,7 +1337,7 @@ COLORS:
 
 .m-sts dt,
 .m-sts dd, {
-  line-height: 1.15384615381;
+  line-height: .08;
 }
 
 .m-sts > dt {
@@ -1444,7 +1444,7 @@ COLORS:
 
 .m-lgo {
   width: 260px;
-  width: 20rem;
+  width: 50rem;
 }
 
 .m-lgo li {
@@ -1472,22 +1472,6 @@ COLORS:
 
 .f-like-box {
   width: 100%;
-}
-
-#truemark {
-  background: url(/assets/images/orange-check-mark.png) no-repeat left center;
-  display: inline-block;
-  text-indent: -9999px;
-  width: 105px;
-  width: 8.0769230769rem;
-}
-
-#falsemark {
-  background: url(/assets/images/black_x.png) no-repeat left center;
-  display: inline-block;
-  text-indent: -9999px;
-  width: 105px;
-  width: 8.0769230769rem;
 }
 
 /* &4 - S T R U C T U R E
@@ -1753,7 +1737,7 @@ p.m-clo {
 }
 
 .edit-tbl dd input, .edit-tbl dd select {
-  padding: 3px;
+  padding: 1px;
   width: 400px;
   margin-bottom: 10px;
 }
@@ -1788,7 +1772,7 @@ p.m-clo {
 /*Commision Levels*/
 
 .commissions .m-button {
-    font-size:12px;
+    font-size:10px;
     margin-right:10px;
 }
 
@@ -2231,7 +2215,7 @@ nav {
 
   .mail_sect {
     border-top: 1px solid #d8d8d8;
-    padding: 14px 0;
+    padding: 13px 0;
     position: relative;
   }
 
@@ -2250,10 +2234,10 @@ nav {
 
   .mail_sect .time {
     position: absolute;
-    top: 14px;
+    top: 13px;
     right: 0;
 
-    font-size: 12px;
+    font-size: 10px;
     color: #828282;
   }
 
@@ -2267,7 +2251,7 @@ nav {
     width: 105px;
     text-align: left;
     color: #828282;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: bold;
     margin-right: 1%;
     white-space: nowrap;
@@ -2293,7 +2277,7 @@ nav {
     color: #555;
     text-shadow: 1px 1px 0 #fff;
 
-    margin-right: 14px;
+    margin-right: 13px;
     margin-right: 1rem;
     padding: 4px 8px;
     border: 1px solid #ccc;
@@ -2478,7 +2462,7 @@ nav {
   }
 
   .full_report .m-tbl, .report .m-tbl {
-    margin: 18px 0 14px;
+    margin: 18px 0 13px;
   }
 
   .full_report .m-tbl th,
@@ -2607,7 +2591,7 @@ nav {
 
   .ath-det li {
     float: left;
-    font-size: 12px;
+    font-size: 10px;
     margin-right: 10px;
     color: #828282;
   }
@@ -2662,7 +2646,7 @@ nav {
     top: 0;
     right: 0;
 
-    font-size: 12px;
+    font-size: 10px;
     color: #828282;
   }
 
@@ -2685,7 +2669,7 @@ nav {
 
   .email .msg {
     line-height: 1.33;
-    font-size: 12px;
+    font-size: 10px;
     color: #828282;
   }
 
@@ -3270,7 +3254,7 @@ CONTENTS:
   /* ---- */
 
   .m-nav-tab > li {
-    font-size: 12px;
+    font-size: 10px;
     font-size: 0.9230769231rem;
   }
 
@@ -3349,8 +3333,8 @@ CONTENTS:
   }
 
   .m-lgo{
-    width: 105px;
-    width: 8.0769230769rem;
+    width: 800px;
+    width: 15rem;
   }
 
   .m-lgo-tagline {
@@ -4141,7 +4125,7 @@ CONTENTS:
 	*/
 	/*width: 100%;*/
 	font: menu;
-	font-size: 12px;
+	font-size: 10px;
 	/* 
 	it is very important, if line-height not setted or setted 
 	in relative units scroll will be broken in firefox
@@ -4221,7 +4205,7 @@ CONTENTS:
   /*font-family: 'Helvetica', Arial, sans-serif;*/
   font-size: 16px;
   font-weight: bold;
-  line-height: 14px;
+  line-height: 13px;
   margin-top: 0.5em;
   margin-bottom: 13px;
   border-radius: 5px;
