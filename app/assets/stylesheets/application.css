@@ -1337,7 +1337,7 @@ COLORS:
 
 .m-sts dt,
 .m-sts dd, {
-  line-height: .08;
+  line-height: 1;
 }
 
 .m-sts > dt {
