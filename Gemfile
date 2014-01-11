@@ -12,6 +12,8 @@ gem 'pg'
 
 gem 'unicorn'
 
+gem 'asana-ruby'
+
 gem "ruby-standard-deviation", "~> 2.0.0"
 
 # Gems used only for assets and not required
@@ -27,6 +29,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'sqlite3'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

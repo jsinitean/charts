@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522015611) do
+ActiveRecord::Schema.define(:version => 20140111160744) do
 
   create_table "sprints", :force => true do |t|
     t.string   "sprint"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20130522015611) do
     t.integer  "carryover_pts"
     t.integer  "carryover_stor"
     t.integer  "bugs"
+    t.integer  "team_id"
   end
 
 end

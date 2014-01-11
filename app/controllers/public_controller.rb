@@ -1,48 +1,72 @@
 class PublicController < ApplicationController
   require "ruby-standard-deviation"
   
-  #!/usr/bin/env ruby
-
-  #require "rubygems"
-  #require "JSON"
-  #require "net/https"
-  #require "uri"
-  #api_key = "jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN"
-  #workspace_id = "7289715607517"
-
-  # set up HTTPS connection
-  #uri = URI.parse("https://app.asana.com/api/1.0/projects/7289715607517/tasks?opt_fields=name")
-  #http = Net::HTTP.new(uri.host, uri.port)
-  #http.use_ssl = true
-  #http.verify_mode = OpenSSL::SSL::VERIFY_PEER
-
-  # set up the request
-  #header = {
-  #  "Content-Type" => "application/json"
-  #}
-
-  #request = Net::HTTP::Get.new(uri.request_uri)
-  #response = http.request(request)
-  #response.body = {
-  #  "data" => {
-  #    "workspace" => workspace_id,
-  #    "name" => "Hello World!",
-  #    "assignee" => assignee
-  #  }
-  #}.to_json()
-  
-  #response.status
-  
-  #body = JSON.parse(res.body)
-  #if body['errors'] then
-  #  puts "Server returned an error: #{body['errors'][0]['message']}"
-  #else
-  #  puts "Created task with id: #{body['data']['id']}"
-  #end
-  
   def index
-    @sprint = Sprints.dev
-    @sprint_count = @sprint.size
+    require 'asana'
+ 
+    Asana.configure do |client|
+      client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
+    end
+      
+    #@users = Asana::User.me
+    #@tags = Asana::Tag.find('9393480861390')
+    #@tasks = @tags.tasks
+    @pro1 = Asana::Project.find('9491387612778')
+    @pro2 = Asana::Project.find('9491387612780')
+    @pro3 = Asana::Project.find('9491387612782')
+    @tasks1 = @pro1.tasks
+    @tasks2 = @pro2.tasks
+    @tasks3 = @pro3.tasks
+    
+    #require "rubygems"
+    #require "JSON"
+    #require "net/https"
+    #require "uri"
+    #api_key = "jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN"
+    #workspace_id = "137577850971"
+
+    # set up HTTPS connection
+    #uri = URI.parse("https://app.asana.com/api/1.0/tags/9191758976196/tasks?opt_fields=name,completed,assignee")
+    #http = Net::HTTP.new(uri.host, uri.port)
+    #http.use_ssl = true
+    #http.verify_mode = OpenSSL::SSL::VERIFY_PEER
+
+    # set up the request
+    #header = {
+    #  "Content-Type" => "application/json"
+    #}
+    
+    #fullPath = uri.path+'?'+uri.query
+    
+    #req = Net::HTTP::Get.new(fullPath)
+    #req.basic_auth(api_key, '')
+    #res = http.start { |http| http.request(req) }
+    #@object = res.body
+    # output
+    #print http.request(req)
+
+    #objectResult = JSON.parse(res.body)
+    #objectPretty = JSON.pretty_generate(objectResult)
+    #@object = objectPretty  
+    
+    @sprint1 = Sprints.ui.range
+    @sprint_count1 = @sprint1.average(:completed_pts)
+    @sprint_count_round1 = @sprint_count1.round(1)
+    @sprint_hours1 = @sprint1.average(:hours)
+    @sprint_hours_round1 = @sprint_hours1.round(1)
+
+    @sprint2 = Sprints.dev.range.team2
+    @sprint_count2 = @sprint2.average(:completed_pts)
+    @sprint_count_round2 = @sprint_count2.round(1)
+    @sprint_hours2 = @sprint2.average(:hours)
+    @sprint_hours_round2 = @sprint_hours2.round(1)
+    
+    @sprint3 = Sprints.dev.range.team1
+    @sprint_count3 = @sprint3.average(:completed_pts)
+    @sprint_count_round3 = @sprint_count3.round(1)
+    @sprint_hours3 = @sprint3.average(:hours)
+    @sprint_hours_round3 = @sprint_hours3.round(1)
+    
   end
   
   def graph2
@@ -75,7 +99,7 @@ class PublicController < ApplicationController
       redirect_to(:action => 'index')
     else
       # If save fails, redisplay the form so user can fix problems
-      redirect_to(:action => 'graph1')
+      redirect_to(:action => 'index')
     end
   end
 

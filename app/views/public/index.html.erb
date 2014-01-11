@@ -1,3 +1,222 @@
-<iframe SRC="http://morning-mountain-4990.herokuapp.com/public/graph2.html" id="asana" WIDTH="1220" HEIGHT="620" MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER="NO" SCROLLING="YES" STYLE="border-width:0px;" seamless></iframe>
 
-<iframe SRC="http://morning-mountain-4990.herokuapp.com/public/graph3.html" id="asana" WIDTH="1220" HEIGHT="620" MARGINWIDTH=0 MARGINHEIGHT=0 FRAMEBORDER="NO" SCROLLING="YES" STYLE="border-width:0px;" seamless></iframe>
+<header class="l-clr">
+  <nav id="secondary-nav" class="l-clr">
+    <ul class="m-nav m-lgo l-left l-clr">
+      <li><a href="#">National Collegiate Scouting Association</a></li>
+      <li class="m-lgo-tagline">Athletic Recruiting</li>
+    </ul>
+
+    <div id="mobile_menu" class="mobile-show-wide l-right" style="display:none;">
+      <span class="f-pictos f-medium">l</span>
+    </div>
+
+
+    <ul class="l-right m-nav m-nav-padded">
+      <li><a href="/public/admin">Add Sprint</a></li>
+      <li><a href="/public/admin">Update Team</a></li>
+      <li last-child><a href="/public/admin">Update Current Sprint</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="main l-clr">
+
+    <div class="l-gut-right l-left">
+      <h1 class="l-bln-mg-btm-0">Software Development Team </h1>
+    </div>
+</section>
+<section class="main l-clr">
+	<div class="l-col-3 l-gut-right l-left">
+	      <h4>UI Team</h4>
+	          <dl class="m-sts">
+	            <dt>Tunde Oshinowo</dt>
+	                <dd>Tunde</dd>  
+	            <dt>Mark Mrsnik</dt>
+	                <dd>Magnus</dd>
+	          </dl>
+  		  <div style="clear:both"></div>
+  	        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1">UI 2014 Capacity</h4>
+  	            <dl class="m-sts">
+  	              <dt>Average Points:</dt>
+  	                  <dd><%= @sprint_count_round1 %></dd>
+  	              <dt>Average Hours:</dt>
+  	                  <dd><%= @sprint_hours_round1 %></dd>
+  	            </dl>        	  
+	      <div style="clear:both"></div>
+	        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro1.name  %> (<%= @pro1.notes  %>)</h4>
+			<% @tasks1.each do |task1| %>
+			<dl class="m-sts">
+				<td>
+					<% if task1.name == 'QA In Progress:'  %>
+					<% elsif task1.name == 'QA in Progress:' %>
+					<% elsif task1.name == 'Ready for QA:' %>
+					<% elsif task1.name == 'Ready For QA:' %>
+					<% elsif task1.name == 'Not Started:' %>
+					<% elsif task1.name == 'In Progress:' %>
+					<% elsif task1.name == 'Blocked:' %>
+					<% elsif task1.name == 'Stories:' %>
+					<% elsif task1.completed == true %>
+					<img src="/assets/orange-check-mark.png" alt="true" width="42" height="42">  
+					<% elsif task1.completed == false %>
+					<img src="/assets/black_x.png" alt="false" width="42" height="42">   
+					<% end %>
+				</td>	
+				<td>
+					<% if task1.name == 'QA In Progress:'  %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'QA in Progress:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Ready for QA:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Ready For QA:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Not Started:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'In Progress:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Blocked:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Stories:' %>
+					<b><%= task1.name %></b>
+					<% else %>
+					<%= task1.name %>
+					<% end %>
+				</td>
+			</dl>	
+			<% end %>
+			<div style="clear:both"></div>	  
+	    </div>
+
+<div class="l-col-3 l-gut-right l-left">
+      <h4>Metal Team</h4>
+          <dl class="m-sts">
+            <dt>Jeremy Sinitean</dt>
+                <dd>Griz</dd>  
+            <dt>Mark Capodagli</dt>
+                <dd>New Chairs</dd>
+            <dt>Jeremy Peterson</dt>
+                <dd>JP</dd>
+	        <dt>Adarsh Devanhalli</dt>
+	            <dd>Adarsh</dd>
+		    <dt>Matt Hoover</dt>
+		        <dd>Hovercraft</dd>	
+		    <dt>Randy Wilson</dt>
+		        <dd>Randy</dd>	
+          </dl>
+  		<div style="clear:both"></div>
+          <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1">Metal 2014 Capacity</h4>
+              <dl class="m-sts">
+                <dt>Average Points:</dt>
+                    <dd><%= @sprint_count_round2 %></dd>
+                <dt>Average Hours:</dt>
+                    <dd><%= @sprint_hours_round2 %></dd>
+              </dl> 	  
+      <div style="clear:both"></div>
+        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro2.name  %> (<%= @pro2.notes  %>)</h4>
+		<% @tasks2.each do |task2| %>
+		<dl class="m-sts">
+			<td>
+				<% if task2.name == 'QA In Progress:'  %>
+				<% elsif task2.name == 'Ready for QA:' %>
+				<% elsif task2.name == 'Ready For QA:' %>
+				<% elsif task2.name == 'QA in Progress:' %>
+				<% elsif task2.name == 'Not Started:' %>
+				<% elsif task2.name == 'In Progress:' %>
+				<% elsif task2.name == 'Blocked:' %>
+				<% elsif task2.name == 'Deployment Tasks:' %>
+				<% elsif task2.completed == true %>
+				<img src="/assets/orange-check-mark.png" alt="true" width="42" height="42">  
+				<% elsif task2.completed == false %>
+				<img src="/assets/black_x.png" alt="false" width="42" height="42">   
+				<% end %>
+			</td>	
+			<td>
+				<% if task2.name == 'QA In Progress:'  %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Ready for QA:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Ready For QA:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Not Started:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'In Progress:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Blocked:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Deployment Tasks:' %>
+				<b><%= task2.name %></b>
+				<% else %>
+				<%= task2.name %>
+				<% end %>
+			</td>
+		</dl>	
+		<% end %>       
+		<div style="clear:both"></div>	  
+    </div>
+
+
+<div class="l-col-3 l-right">
+      <h4>Mobile Team</h4>
+          <dl class="m-sts">
+            <dt>Josh Lockhart</dt>
+                <dd>Sniper</dd>  
+            <dt>Josh Elkins</dt>
+                <dd>Jelkins</dd>
+            <dt>Andrew Tillman</dt>
+                <dd>Tillman</dd>
+	        <dt>Shane Mook</dt>
+	            <dd>Smooky</dd>
+          </dl>
+  	  <div style="clear:both"></div>
+          <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1">Mobile 2014 Capacity</h4>
+              <dl class="m-sts">
+                <dt>Average Points:</dt>
+                    <dd><%= @sprint_count_round3 %></dd>
+                <dt>Average Hours:</dt>
+                    <dd><%= @sprint_hours_round3 %></dd>
+              </dl>      
+      <div style="clear:both"></div>
+        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro3.name  %> (<%= @pro3.notes  %>)</h4>
+		<% @tasks3.each do |task3| %>
+		<dl class="m-sts">
+			<td>
+				<% if task3.name == 'QA In Progress:'  %>
+				<% elsif task3.name == 'Ready for QA:' %>
+				<% elsif task3.name == 'Not Started:' %>
+				<% elsif task3.name == 'In Progress:' %>
+				<% elsif task3.name == 'Blocked:' %>
+				<% elsif task3.name == 'Deployment Tasks:' %>
+				<% elsif task3.completed == true %>
+				<img src="/assets/orange-check-mark.png" alt="true" width="42" height="42">  
+				<% elsif task3.completed == false %>
+				<img src="/assets/black_x.png" alt="false" width="42" height="42">   
+				<% end %>
+			</td>	
+			<td>
+				<% if task3.name == 'QA In Progress:'  %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'Ready for QA:' %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'Not Started:' %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'In Progress:' %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'Blocked:' %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'Deployment Tasks:' %>
+				<b><%= task3.name %></b>
+				<% else %>
+				<%= task3.name %>
+				<% end %>
+			</td>
+		</dl>	
+		<% end %>
+		    
+		<div style="clear:both"></div>	  
+    </div>
+<div style="clear:both"></div>	
+</section>
+
+<footer>
+	<div style="clear:both"></div>
+</footer>

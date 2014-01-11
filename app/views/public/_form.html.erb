@@ -13,6 +13,10 @@
     <td><%= f.select(:dev_ui, [["DEV"],["UI"]]) %></td>
   </tr>
   <tr>
+    <th><%= f.label(:team_id, "Team ID ") %></th>
+    <td><%= f.select(:team_id, [["0"],["1"],["2"]]) %>e.g. 2 = Metal, 1 = Mobile, 0 = UI</td>
+  </tr>
+  <tr>
     <th><%= f.label(:hours, "Hours") %></th>
     <td><%= f.text_field(:hours) %></td>
   </tr>
