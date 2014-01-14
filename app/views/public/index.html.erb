@@ -1,5 +1,6 @@
 
 <header class="l-clr">
+  <meta http-equiv="refresh" content="1000">
   <nav id="secondary-nav" class="l-clr">
     <ul class="m-nav m-lgo l-left l-clr">
       <li><a href="#">National Collegiate Scouting Association</a></li>
@@ -20,6 +21,16 @@
 
 <section class="main l-clr">
 	<div class="l-col-3 l-gut-right l-left">
+      	 <h4>Anti-Team Team</h4>
+          <dl class="m-sts">
+            <dt>Randy Wilson</dt>
+                <dd>Uncle Randy Skilling</dd>  
+	        <dt>Mike Jansen</dt>
+	            <dd>Jamo</dd>
+			<dt>Matt Hoover</dt>
+			    <dd>Hovercraft</dd>		
+          </dl>
+		  <div style="clear:both"></div>
 	      <h4>UI Team</h4>
 	          <dl class="m-sts">
 	            <dt>Tunde Oshinowo</dt>
@@ -47,6 +58,7 @@
 					<% elsif task1.name == 'Not Started:' %>
 					<% elsif task1.name == 'In Progress:' %>
 					<% elsif task1.name == 'Blocked:' %>
+					<% elsif task1.name == 'Ready for Code Review:' %>
 					<% elsif task1.name == 'Stories:' %>
 					<% elsif task1.completed == true %>
 					<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
@@ -68,6 +80,8 @@
 					<% elsif task1.name == 'In Progress:' %>
 					<b><%= task1.name %></b>
 					<% elsif task1.name == 'Blocked:' %>
+					<b><%= task1.name %></b>
+					<% elsif task1.name == 'Ready for Code Review:' %>
 					<b><%= task1.name %></b>
 					<% elsif task1.name == 'Stories:' %>
 					<b><%= task1.name %></b>
@@ -91,10 +105,8 @@
                 <dd>JP</dd>
 	        <dt>Adarsh Devanhalli</dt>
 	            <dd>Adarsh</dd>
-		    <dt>Matt Hoover</dt>
-		        <dd>Hovercraft</dd>	
-		    <dt>Randy Wilson</dt>
-		        <dd>Randy</dd>	
+		    <dt>Nhu Nguyen</dt>
+			    <dd>Nhu</dd>		
           </dl>
   		<div style="clear:both"></div>
           <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1">Metal 2014 Capacity</h4>
@@ -117,6 +129,7 @@
 				<% elsif task2.name == 'In Progress:' %>
 				<% elsif task2.name == 'Blocked:' %>
 				<% elsif task2.name == 'Deployment Tasks:' %>
+				<% elsif task2.name == 'Ready for Code Review:' %>
 				<% elsif task2.completed == true %>
 				<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
 				<% elsif task2.completed == false %>
@@ -131,6 +144,8 @@
 				<% elsif task2.name == 'Ready For QA:' %>
 				<b><%= task2.name %></b>
 				<% elsif task2.name == 'Not Started:' %>
+				<b><%= task2.name %></b>
+				<% elsif task2.name == 'Ready for Code Review:' %>
 				<b><%= task2.name %></b>
 				<% elsif task2.name == 'In Progress:' %>
 				<b><%= task2.name %></b>
@@ -159,6 +174,8 @@
                 <dd>Tillman</dd>
 	        <dt>Shane Mook</dt>
 	            <dd>Smooky</dd>
+		    <dt>Jeremy Neander</dt>
+		        <dd>Da Beard</dd>
           </dl>
   	  <div style="clear:both"></div>
           <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1">Mobile 2014 Capacity</h4>
@@ -177,6 +194,7 @@
 				<% elsif task3.name == 'Ready for QA:' %>
 				<% elsif task3.name == 'Not Started:' %>
 				<% elsif task3.name == 'In Progress:' %>
+				<% elsif task3.name == 'Ready for Code Review:' %>
 				<% elsif task3.name == 'Blocked:' %>
 				<% elsif task3.name == 'Deployment Tasks:' %>
 				<% elsif task3.completed == true %>
@@ -195,6 +213,8 @@
 				<% elsif task3.name == 'In Progress:' %>
 				<b><%= task3.name %></b>
 				<% elsif task3.name == 'Blocked:' %>
+				<b><%= task3.name %></b>
+				<% elsif task3.name == 'Ready for Code Review:' %>
 				<b><%= task3.name %></b>
 				<% elsif task3.name == 'Deployment Tasks:' %>
 				<b><%= task3.name %></b>
