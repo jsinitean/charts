@@ -70,6 +70,14 @@ class PublicController < ApplicationController
   end
   
   def graph2
+    require 'asana'
+ 
+    Asana.configure do |client|
+      client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
+    end
+  
+    @pro2 = Asana::Project.find('11087568571419')
+    
     @sprint = Sprints.dev
     @sprint_count = @sprint.average(:completed_pts)
     @sprint_count_round = @sprint_count.round(1)
@@ -80,6 +88,13 @@ class PublicController < ApplicationController
   end
   
   def graph3
+    require 'asana'
+ 
+    Asana.configure do |client|
+      client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
+    end
+      
+    @pro1 = Asana::Project.find('11087568571417')
     @sprint = Sprints.ui
     @sprint_count = @sprint.average(:completed_pts)
     @sprint_count_round = @sprint_count.round(1)
