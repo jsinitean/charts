@@ -2,70 +2,52 @@
 <div class="menu">
 <h2 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro1.name  %> </h2>
 <h4><%= @pro1.notes  %></h4>
+							<% @tasks1.each do |task1| %> 
+								<td>
+									<% if task1.name == 'QA In Progress:'  %>
+									<% elsif task1.name == 'QA in Progress:' %>
+									<% elsif task1.name == 'Ready for QA:' %>
+									<% elsif task1.name == 'Ready For QA:' %>
+									<% elsif task1.name == 'Not Started:' %>
+									<% elsif task1.name == 'In Progress:' %>
+									<% elsif task1.name == 'Blocked:' %>
+									<% elsif task1.name == 'Ready for Code Review:' %>
+									<% elsif task1.name == 'Stories:' %>
+									<% elsif task1.name == 'Retro Deltas:' %>
+									<% elsif task1.completed == true %>
+									<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
+									<% elsif task1.completed == false %>
+									<img src="/assets/black_x.png" alt="false" width="15" height="15">   
+									<% end %>
+								</td>
+							<% end %>
+							
+						
+</div>
+
+<div class="menu">
+<h2 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro3.name  %> </h2>
+<h4><%= @pro3.notes  %></h4>
+							<% @tasks2.each do |task2| %> 
+								<td>
+									<% if task2.name == 'QA In Progress:'  %>
+									<% elsif task2.name == 'QA in Progress:' %>
+									<% elsif task2.name == 'Ready for QA:' %>
+									<% elsif task2.name == 'Ready For QA:' %>
+									<% elsif task2.name == 'Not Started:' %>
+									<% elsif task2.name == 'In Progress:' %>
+									<% elsif task2.name == 'Blocked:' %>
+									<% elsif task2.name == 'Ready for Code Review:' %>
+									<% elsif task2.name == 'Stories:' %>
+									<% elsif task2.name == 'Retro Deltas:' %>
+									<% elsif task2.completed == true %>
+									<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
+									<% elsif task2.completed == false %>
+									<img src="/assets/black_x.png" alt="false" width="15" height="15">   
+									<% end %>
+								</td>
+							<% end %>
+							
 </div>
 
 </div>
-
-<!--
-   <html>
-	  <head>
-	    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-	    <script type="text/javascript">
-		
-	google.load('visualization', '1', {'packages': ['corechart']});
-	google.setOnLoadCallback(drawChart);
-
-	function drawChart() {
-	    var data = new google.visualization.DataTable();
-	    data.addColumn('string', 'Sprint');
-	    data.addColumn('number', 'Completed Points');
-	    data.addColumn('number', 'Hours');
-	    data.addRows([
-		
-			<% @sprint.each do |sprint| %>
-	          ["<%= sprint.sprint %>", <%= sprint.completed_pts %>,<%= sprint.hours %>],
-			<% end %>
-	    ]);
-		
-	    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-	    chart.draw(data, {
-	        width: 1200,
-	        height: 600,
-			legendTextStyle: {color:'#666666'},
-			hAxis: {title: 'Sprints',
-			        titleTextStyle: {color: '#5c5c5c'},
-			        titlePosition: 'in'},
-	        colors: ['#552988', '#e69500'],
-			title: 'UI Sprint Velocity -- Average Completed Pts: <%= @sprint_count_round %> / Hours: <%= @sprint_hours_round %> / Bugs: <%= @sprint_bugs_round %>' ,
-	        series: {
-	            0: {targetAxisIndex: 0},
-	            1: {targetAxisIndex: 1}
-	        },
-	        vAxes: {
-	            0: {
-	                minValue: 0,
-	                maxValue: 30,
-	                title: 'Completed Points',
-					titleTextStyle: {color: '#5c5c5c'},
-		            titlePosition: 'out'
-	            },
-	            1: {
-	                minValue: 0,
-	                maxValue: 100,
-	                title: 'Hours',
-					titleTextStyle: {color: '#5c5c5c'},
-		            titlePosition: 'out'
-	            }
-	        }
-	    });
-	}
-</script>	
-
-
-    </script>
-  </head>
-  <body>
-    <div id="chart_div" style="width: 1000px; height: 500px;"></div>
-  </body>
-</html>
--->

@@ -77,6 +77,7 @@ class PublicController < ApplicationController
     end
   
     @pro2 = Asana::Project.find('11125477959366')
+    @tasks2 = @pro2.tasks
     
     @sprint = Sprints.dev
     @sprint_count = @sprint.average(:completed_pts)
@@ -95,13 +96,17 @@ class PublicController < ApplicationController
     end
       
     @pro1 = Asana::Project.find('11125477959364')
-    @sprint = Sprints.ui
-    @sprint_count = @sprint.average(:completed_pts)
-    @sprint_count_round = @sprint_count.round(1)
-    @sprint_hours = @sprint.average(:hours)
-    @sprint_hours_round = @sprint_hours.round(1)
-    @sprint_bugs = @sprint.average(:bugs)
-    @sprint_bugs_round = @sprint_bugs.round(1)
+    @tasks1 = @pro1.tasks
+    
+    @pro3 = Asana::Project.find('11314511713050')
+    @tasks2 = @pro3.tasks
+    #@sprint = Sprints.ui
+    #@sprint_count = @sprint.average(:completed_pts)
+    #@sprint_count_round = @sprint_count.round(1)
+    #@sprint_hours = @sprint.average(:hours)
+    #@sprint_hours_round = @sprint_hours.round(1)
+    #@sprint_bugs = @sprint.average(:bugs)
+    #@sprint_bugs_round = @sprint_bugs.round(1)
   end
   
   def create
