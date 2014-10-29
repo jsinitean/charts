@@ -2,17 +2,7 @@ class PublicController < ApplicationController
   require "ruby-standard-deviation"
   
   def index
-    require 'asana'
- 
-    Asana.configure do |client|
-      client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
-    end
 
-    @pro1 = Asana::Project.find('18650197634428')
-    @pro2 = Asana::Project.find('18641181153318')
-    @tasks1 = @pro1.tasks
-    @tasks2 = @pro2.tasks
-    
   end
   
   def graph2
@@ -22,8 +12,8 @@ class PublicController < ApplicationController
       client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
     end
   
-    @pro2 = Asana::Project.find('11125477959366')
-    @tasks2 = @pro2.tasks
+    @pro1 = Asana::Project.find('18650197634428')
+    @tasks1 = @pro1.tasks
 
   end
   
@@ -34,8 +24,8 @@ class PublicController < ApplicationController
       client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
     end
       
-    @pro1 = Asana::Project.find('11125477959364')
-    @tasks1 = @pro1.tasks
+    @pro2 = Asana::Project.find('18641181153318')
+    @tasks2 = @pro2.tasks
 
   end
   

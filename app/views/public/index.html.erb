@@ -1,3 +1,22 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+
+$.ajax({
+  url: "public/graph2",
+  success: function(html){
+    $("#graph2").append(html);
+  }
+});
+
+$.ajax({
+  url: "public/graph3",
+  success: function(html){
+    $("#graph3").append(html);
+  }
+});
+
+</script>
 
 <header class="l-clr">
   <meta http-equiv="refresh" content="1000">
@@ -20,93 +39,20 @@
 </header>
 
 <section class="main l-clr">
-	<div class="l-col-2 l-gut-right l-left">     	  
-	      <div style="clear:both"></div>
-	        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro1.name  %> (<%= @pro1.notes  %>)</h4>
-			<% @tasks1.each do |task1| %>
-			<dl class="m-sts">
-				<td>
-					<% if task1.name == 'QA In Progress:'  %>
-					<% elsif task1.name == 'Ready For QA:' %>
-					<% elsif task1.name == 'Not Started:' %>
-					<% elsif task1.name == 'In Progress:' %>
-					<% elsif task1.name == 'Blocked:' %>
-					<% elsif task1.name == 'Ready for Code Review:' %>
-					<% elsif task1.name == 'Stories:' %>
-					<% elsif task1.completed == true %>
-					<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
-					<% elsif task1.completed == false %>
-					<img src="/assets/black_x.png" alt="false" width="15" height="15">   
-					<% end %>
-				</td>	
-				<td>
-					<% if task1.name == 'QA In Progress:'  %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'Ready For QA:' %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'Not Started:' %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'In Progress:' %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'Blocked:' %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'Ready for Code Review:' %>
-					<b><%= task1.name %></b>
-					<% elsif task1.name == 'Stories:' %>
-					<b><%= task1.name %></b>
-					<% else %>
-					<%= task1.name %>
-					<% end %>
-				</td>
-			</dl>	
-			<% end %>
-			<div style="clear:both"></div>	  
-	    </div>
 
-<div class="l-col-2 l-right">
-        <h4 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro2.name  %> (<%= @pro2.notes  %>)</h4>
-		<% @tasks2.each do |task2| %>
-		<dl class="m-sts">
-			<td>
-				<% if task2.name == 'QA In Progress:'  %>
-				<% elsif task2.name == 'Ready for QA:' %>
-				<% elsif task2.name == 'Not Started:' %>
-				<% elsif task2.name == 'In Progress:' %>
-				<% elsif task2.name == 'Blocked:' %>
-				<% elsif task2.name == 'Deployment Tasks:' %>
-				<% elsif task2.name == 'Ready for Code Review:' %>
-				<% elsif task2.completed == true %>
-				<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
-				<% elsif task2.completed == false %>
-				<img src="/assets/black_x.png" alt="false" width="15" height="15">   
-				<% end %>
-			</td>	
-			<td>
-				<% if task2.name == 'QA In Progress:'  %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'Ready for QA:' %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'Not Started:' %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'Ready for Code Review:' %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'In Progress:' %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'Blocked:' %>
-				<b><%= task2.name %></b>
-				<% elsif task2.name == 'Deployment Tasks:' %>
-				<b><%= task2.name %></b>
-				<% else %>
-				<%= task2.name %>
-				<% end %>
-			</td>
-		</dl>	
-		<% end %>       
-		<div style="clear:both"></div>	  
-    </div>
-<div style="clear:both"></div>	
+<div class="dashboard verified l-col-4 l-left">
+    <h4>Dev Sprint:</h4>
+    <div id="graph2">&nbsp;</div>
+</div>	
+
+<div class="dashboard verified l-col-5 l-right l-clr">
+    <h4>UI Sprint:</h4>
+    <div id="graph3">&nbsp;</div>
+</div>
+
 </section>
 
 <footer>
 	<div style="clear:both"></div>
 </footer>
+

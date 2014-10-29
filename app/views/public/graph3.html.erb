@@ -1,51 +1,41 @@
-<div class="menu">
-<div class="menu">
-<h2 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro1.name  %> </h2>
-<h4><%= @pro1.notes  %></h4>
-							<% @tasks1.each do |task1| %> 
-								<td>
-									<% if task1.name == 'QA In Progress:'  %>
-									<% elsif task1.name == 'Ready for QA:' %>
-									<% elsif task1.name == 'Not Started:' %>
-									<% elsif task1.name == 'In Progress:' %>
-									<% elsif task1.name == 'Blocked:' %>
-									<% elsif task1.name == 'Ready for Code Review:' %>
-									<% elsif task1.name == 'Stories:' %>
-									<% elsif task1.name == 'Retro Deltas:' %>
-									<% elsif task1.completed == true %>
-									<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
-									<% elsif task1.completed == false %>
-									<img src="/assets/black_x.png" alt="false" width="15" height="15">   
-									<% end %>
-								</td>
-							<% end %>
-							
-						
-</div>
-
-<div class="menu">
-<h2 class="l-bln-mg-btm-1 l-bln-mg-top-1"><%= @pro3.name  %> </h2>
-<h4><%= @pro3.notes  %></h4>
-							<% @tasks2.each do |task2| %> 
-								<td>
-									<% if task2.name == 'QA In Progress:'  %>
-									<% elsif task2.name == 'QA in Progress:' %>
-									<% elsif task2.name == 'Ready for QA:' %>
-									<% elsif task2.name == 'Ready For QA:' %>
-									<% elsif task2.name == 'Not Started:' %>
-									<% elsif task2.name == 'In Progress:' %>
-									<% elsif task2.name == 'Blocked:' %>
-									<% elsif task2.name == 'Ready for Code Review:' %>
-									<% elsif task2.name == 'Stories:' %>
-									<% elsif task2.name == 'Retro Deltas:' %>
-									<% elsif task2.completed == true %>
-									<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
-									<% elsif task2.completed == false %>
-									<img src="/assets/black_x.png" alt="false" width="15" height="15">   
-									<% end %>
-								</td>
-							<% end %>
-							
-</div>
-
+<div>
+    <h5><%= @pro2.name  %> (<%= @pro2.notes  %>)</h5>
+	<% @tasks2.each do |task2| %>
+	<dl class="m-sts">
+		<td>
+			<% if task2.name == 'QA In Progress:'  %>
+			<% elsif task2.name == 'Ready for QA:' %>
+			<% elsif task2.name == 'Not Started:' %>
+			<% elsif task2.name == 'In Progress:' %>
+			<% elsif task2.name == 'Blocked:' %>
+			<% elsif task2.name == 'Ready for Code Review:' %>
+			<% elsif task2.name == 'Stories:' %>
+			<% elsif task2.completed == true %>
+			<img src="/assets/orange-check-mark.png" alt="true" width="15" height="15">  
+			<% elsif task2.completed == false %>
+			<img src="/assets/black_x.png" alt="false" width="15" height="15">
+			<% end %>
+		</td>	
+		<td>
+			<% if task2.name == 'QA In Progress:'  %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'Ready for QA:' %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'Not Started:' %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'Ready for Code Review:' %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'In Progress:' %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'Blocked:' %>
+			<b><%= task2.name %></b>
+			<% elsif task2.name == 'Stories:' %>
+			<b><%= task2.name %></b>
+			<% else %>
+			<%= task2.name %>
+			<% end %>
+		</td>
+	</dl>	
+	<% end %>       
+	<div style="clear:both"></div>	  
 </div>
