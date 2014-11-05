@@ -12,7 +12,7 @@ class PublicController < ApplicationController
       client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
     end
   
-    @pro1 = Asana::Project.find('18650197634428')
+    @pro1 = Asana::Project.find('19047177713296')
     @tasks1 = @pro1.tasks
 
   end
@@ -24,7 +24,7 @@ class PublicController < ApplicationController
       client.api_key = 'jlVkWF3.0RBcLBYXbvN5wZeHn0GCEgJN'
     end
       
-    @pro2 = Asana::Project.find('18641181153318')
+    @pro2 = Asana::Project.find('19047177713298')
     @tasks2 = @pro2.tasks
 
   end
