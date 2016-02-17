@@ -1,0 +1,63 @@
+<table summary="Ticket form fields">
+
+  <tr>
+    <th><%= f.label(:sprint, "Sprint Name") %></th>
+	<td><%= f.text_field(:sprint) %> e.g. Sprint 1</td>
+  </tr>
+  <tr>
+    <th><%= f.label(:sprint_num, "Sprint Number") %></th>
+	<td><%= f.text_field(:sprint_num) %> e.g. 3.01</td>
+  </tr>
+  <tr>
+    <th><%= f.label(:dev_ui, "Dev or UI") %></th>
+    <td><%= f.select(:dev_ui, [["DEV"],["UI"]]) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:team_id, "Team ID ") %></th>
+    <td><%= f.select(:team_id, [["0"],["1"],["2"]]) %>e.g. 2 = Metal, 1 = Mobile, 0 = UI</td>
+  </tr>
+  <tr>
+    <th><%= f.label(:hours, "Hours") %></th>
+    <td><%= f.text_field(:hours) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:completed_pts, "Completed Points") %></th>
+    <td><%= f.text_field(:completed_pts) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:prioritized_pts, "Prioritized Points") %></th>
+    <td><%= f.text_field(:prioritized_pts) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:carryover_pts, "Carry Over Points") %></th>
+    <td><%= f.text_field(:carryover_pts) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:fallout_pts, "Fallout Points") %></th>
+    <td><%= f.text_field(:fallout_pts) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:completed_stor, "Completed Stories") %></th>
+    <td><%= f.text_field(:completed_stor) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:prioritized_stor, "Prioritized Stories") %></th>
+    <td><%= f.text_field(:prioritized_stor) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:carryover_stor, "Carry Over Stories") %></th>
+    <td><%= f.text_field(:carryover_stor) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:fallout_stor, "Fallout Stories") %></th>
+    <td><%= f.text_field(:fallout_stor) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:bugs, "Production Bugs") %></th>
+    <td><%= f.text_field(:bugs) %></td>
+  </tr>
+  <tr>
+    <th><%= f.label(:comments, "Comments") %></th>
+    <td><%= f.text_area(:comments, :cols => 48, :rows => 4) %></td>
+  </tr>
+</table>

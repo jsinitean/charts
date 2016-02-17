@@ -1,0 +1,17 @@
+<div id="back-link"><%= link_to("Show Graphs", {:controller => 'public', :action => 'index'}) %></div>
+
+<div class="sprint new">
+<div class="menu">
+  <h2>Create Sprint</h2>
+</div>
+
+  <%= form_for(:sprint, :url => {:action => 'create'}) do |f| %>
+  
+    <%= render(:partial => 'contact', :locals => {:f => f}) %>
+    
+    <div class="form-buttons">
+      <%= submit_tag("Submit Request") %>
+    </div>
+    
+  <% end %>
+</div>
